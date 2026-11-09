@@ -2,7 +2,7 @@
 
 ## Video
 
-Video URL — **Add the published YouTube video URL here.**
+Video URL — https://youtu.be/iZECkxED_Yg
 
 Repository — https://github.com/DariensTips/Build-and-Install-OpenSSL-on-Windows-from-Source-Visual-Studio-Build-Tools
 
