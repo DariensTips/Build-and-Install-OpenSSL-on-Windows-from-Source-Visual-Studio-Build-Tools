@@ -1,0 +1,21 @@
+REM Title: Build and Install OpenSSL on Windows from Source ^| Visual Studio Build Tools
+REM Author/channel: Darien Hawkins / Darien's Tips
+REM Purpose: Configure, build, test, and install the shared portable 3.5.9 LTS tree in console 2.
+REM Source script filename: OSSLWIN_Title-Script_20261108.txt
+REM Preparation date: 2026-11-08
+REM Tested environment: Author-reported native x64 MSVC build with VC-WIN64A. Exact Windows build number is not stated.
+REM Target system: Windows build host.
+REM Shell: x64 Native Tools Command Prompt for VS (CMD).
+REM Required privileges: Standard user when the account can write to C:\openssl-portable.
+REM Prerequisites: Fresh portable 3.5.9 LTS source, Perl/NASM/MSVC environment, writable destination. This configuration keeps shared OpenSSL libraries.
+REM Usage notes: This .cmd.txt file is selectable reference text. Copy each example into the stated prompt. Run the install example after the test reports PASS.
+
+REM Example H4-H5, CONSOLE 2 for OpenSSL 3.5.9 LTS.
+cd C:\Tools\PreDownloads\openssl-3.5.9-portable\openssl-3.5.9\openssl-3.5.9
+perl configure no-makedepend --prefix=C:\openssl-portable\openssl-3.5.9-portable --openssldir=C:\openssl-portable\openssl-3.5.9-portable\SSL
+
+REM Example H9. Build, then test only when the build succeeds.
+nmake && nmake test
+
+REM Example H13. Run this separate example after Result: PASS.
+nmake install

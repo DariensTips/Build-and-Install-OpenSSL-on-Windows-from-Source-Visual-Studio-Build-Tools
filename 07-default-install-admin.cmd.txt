@@ -1,0 +1,21 @@
+REM Title: Build and Install OpenSSL on Windows from Source ^| Visual Studio Build Tools
+REM Author/channel: Darien Hawkins / Darien's Tips
+REM Purpose: Install the tested default build and open the system environment dialog.
+REM Source script filename: OSSLWIN_Title-Script_20261108.txt
+REM Preparation date: 2026-11-08
+REM Tested environment: Author-reported native x64 MSVC build with VC-WIN64A. Exact Windows build number is not stated.
+REM Target system: Windows build host.
+REM Shell: x64 Native Tools Command Prompt for VS (CMD).
+REM Required privileges: Administrator for installation and system PATH changes.
+REM Prerequisites: Successful default build and passing nmake test. Installer destinations are Program Files and Common Files SSL.
+REM Usage notes: This .cmd.txt file is selectable reference text. Copy each example into the stated prompt. Run the install example after the test reports PASS.
+
+REM Examples G15-G16. Run in a NEW elevated x64 Native Tools prompt.
+cd C:\Tools\PreDownloads\openssl-4.1.0\openssl-4.1.0
+nmake install
+
+REM Example G19. Open System Properties.
+sysdm.cpl
+
+REM G20-G23 GUI step. Advanced then Environment Variables then System variables then Path.
+REM Add C:\Program Files\OpenSSL\bin\ and confirm both dialogs.
